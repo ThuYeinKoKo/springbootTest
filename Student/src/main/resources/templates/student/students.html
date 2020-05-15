@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+ <html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:th="http://www.thymeleaf.org">
+   <head>
+     <title>Spring Boot App</title>
+   </head>
+   <body>
+     <h1>Welcome to...</h1>
+     <!-- 
+     
+     <img th:src="@{/images/java.png}"/>
+      -->
+      <table border="1">
+      	  <thead>
+      	  	<tr>
+      	  		<th>ID</th>
+      	  		<th>Name </th>
+      	  		<th>Email</th>
+      	  		<th>Action</th>
+      	  	</tr>
+      	  </thead>
+	      <tr th:each="student: ${students}">
+	      	<td> <span th:text="${student.stuId}"></span></td>
+	     	<td> <span th:text="${student.studentName}"></span></td>
+	     	<td> <span th:text="${student.studentEmail}"></span>
+	     	<td>
+	     		<a th:href='@{/student/edit/{id}(id=${student.stuId})}'>Edit</a>
+	     		&nbsp;
+	     		<a th:href='@{/student/delete/{id}(id=${student.stuId})}'>Delete</a>
+	     	</td>
+	      </tr>
+      </table>
+      <a href="/student/new">New Student</a>
+     
+</body>
+</html>
