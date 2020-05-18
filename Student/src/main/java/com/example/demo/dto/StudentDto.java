@@ -4,6 +4,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.example.demo.model.Student;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class StudentDto {
 	
@@ -26,6 +27,7 @@ public class StudentDto {
 		this.studentEmail = student.getStuEmail();
 	}
 	
+	@JsonIgnore
 	public Student getEntity() {
 		Student stu = new Student();
 		stu.setStuId(this.stuId);
