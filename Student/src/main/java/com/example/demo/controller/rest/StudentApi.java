@@ -23,19 +23,21 @@ public class StudentApi {
 	StudentService stuService;
 	
 	@GetMapping(produces = "application/json")
-    public List<StudentDto> getAllCourse() 
+    public List<StudentDto> getAllStudent() 
     {
+		System.out.println("in api/student getAllStudent");
        return stuService.getAllStudents();
     }
 	
 	@GetMapping(path="/{id}",produces = "application/json")
-    public StudentDto getCourse(@PathVariable("id") Long id) 
+    public StudentDto getStudent(@PathVariable("id") Long id) 
     {
+		System.out.println("in api/student -id: "+id);
        return stuService.getStudentById(id);
     }
 	
 	@PostMapping
-    public StudentDto createNewCourse(@RequestBody StudentDto stuDto) 
+    public StudentDto createNewStudent(@RequestBody StudentDto stuDto) 
     {
 		System.out.println("Create New Student");
 		System.out.println("stuDto Name: "+stuDto.getStudentName());
@@ -44,7 +46,7 @@ public class StudentApi {
     }
 	
 	@PutMapping(path="/{id}")
-    public StudentDto updateCourse(@PathVariable("id") Long id,@RequestBody StudentDto stuDto) 
+    public StudentDto updateStudent(@PathVariable("id") Long id,@RequestBody StudentDto stuDto) 
     {
 		System.out.println("Update  Student id: "+ id);
 		System.out.println("stuDto Name: "+stuDto.getStudentName());
@@ -55,7 +57,7 @@ public class StudentApi {
     }
 	
 	 @DeleteMapping(path="/{id}")
-     public void deleteCourse(@PathVariable("id") Long id) 
+     public void deleteStudent(@PathVariable("id") Long id) 
      {
 		 System.out.println("Delete  Student id: "+ id);
          stuService.deleteItemById(id);

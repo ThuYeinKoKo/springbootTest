@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.dao.StudentJpaRepository;
@@ -31,6 +32,7 @@ public class StudentServiceImpl implements StudentService{
 	}
 
 	@Override
+	//@PreAuthorize("hasRole('ROLE_USER')")
 	public StudentDto getStudentById(Long id) {
 		Student student = stuJpaRepository.getOne(id);
 		return new StudentDto(student);
