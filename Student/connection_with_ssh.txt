@@ -1,0 +1,23 @@
+Window -> Preference -> General -> Network Connection ->SSH2 -> Key Management
+
+Generate RSA Key -> Enter passphrase: and confirm (not github password , u can give anything u want)
+
+Save Key(system will ask to create .ssh , confirm YES and OK)
+
+**Please copy generated SSH key to clipboard** and Press Apply
+
+You will need to save SSH key to your github. Please Go to your git hub account
+
+Go to SETTING -> SSH and GPG keys -> New SSH key -> Plese enter title (example : sip_rsa, ww_rsa,etc..)
+
+Please pasted your generated RSA key and OK
+
+*****Now You can Clone github project********
+Go back to workspace and Open Git Repositories
+
+Enter clone a git repository (you need to fill url, copy github project clone url with SSH)
+
+
+
+
+
